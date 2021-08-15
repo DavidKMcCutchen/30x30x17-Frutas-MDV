@@ -1,0 +1,14 @@
+{
+  "frutas": [
+    {
+      "id": 1,
+      "name": "Maracuja",
+      "description": "The most delicious fruit ever"
+    },
+    {
+      "id": 2,
+      "name": "Laranja",
+      "description": "Reminds me of home"
+    }
+  ]
+}

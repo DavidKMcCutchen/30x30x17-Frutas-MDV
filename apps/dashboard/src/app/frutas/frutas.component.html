@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <frutas-frutas-lista
+        [frutas]="allFrutas$ | async"
+        (selected)="selectFruta($event)"
+        (deleted)="deleteFruta($event)"
+      ></frutas-frutas-lista>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <frutas-frutas-detalhes
+        [fruta]="selectedFruta$ | async"
+        (saved)="saveFruta($event)"
+        (cancelled)="resetFruta()"
+        [form]="form"
+      ></frutas-frutas-detalhes>
+    </div>
+  </div>
