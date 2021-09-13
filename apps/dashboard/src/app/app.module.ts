@@ -12,21 +12,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreDataModule } from '@frutas/core-data';
 import { CoreStateModule } from '@frutas/core-state';
 import { CommonModule } from '@angular/common';
+import { EnvironmentModule } from '@frutas/environment';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
   declarations: [AppComponent, FrutasComponent, FrutasListaComponent, FrutasDetalhesComponent],
   imports: [
-    BrowserModule, 
-    HttpClientModule, 
-    RoutingModule, 
+    BrowserModule,
+    HttpClientModule,
+    RoutingModule,
     BrowserAnimationsModule,
     CoreDataModule,
     CoreStateModule,
-    MaterialModule, 
-    FormsModule, 
+    MaterialModule,
+    FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    EnvironmentModule.withEnvironment(environment)
   ],
   providers: [],
   bootstrap: [AppComponent],

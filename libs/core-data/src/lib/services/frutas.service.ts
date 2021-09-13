@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Fruta } from "@frutas/api-interfaces";
-
-const BASE_URL = 'http://localhost:3000/';
+import { FrutasEnvironment, FRUTAS_ENVIRONMENT } from "@frutas/environment";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class FrutasService {
-  model = 'frutas'
+  model = 'frutas';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    @Inject(FRUTAS_ENVIRONMENT) private environment: FrutasEnvironment
+  ) {}
 
   all() {
     return this.httpClient.get<Fruta[]>(this.getUrl())
@@ -34,11 +36,10 @@ export class FrutasService {
   };
 
   private getUrl() {
-    return `${BASE_URL}${this.model}`
+    return `${this.environment.apiUrl}${this.model}`
   };
 
   private getUrlById(id) {
-    return `${this.getUrl}/${id}`
+    return `${this.getUrl()}/${id}`
   };
-
 }

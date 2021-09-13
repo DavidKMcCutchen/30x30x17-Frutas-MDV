@@ -20,6 +20,7 @@
       "@frutas/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@frutas/core-data": ["libs/core-data/src/index.ts"],
       "@frutas/core-state": ["libs/core-state/src/index.ts"],
+      "@frutas/environment": ["libs/environment/src/index.ts"],
       "@frutas/material": ["libs/material/src/index.ts"],
       "@frutas/ui-login": ["libs/ui-login/src/index.ts"]
     }
